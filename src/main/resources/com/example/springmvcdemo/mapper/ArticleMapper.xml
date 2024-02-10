@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springmvcdemo.mapper.ArticleMapper">
+<select id="getById" resultType="com.example.springmvcdemo.entity.vo.ArticleInfoVo">
+    select a.*,u.username from articleinfo a
+    left join userinfo u on u.id=a.id
+    where a.id=#{id}
+</select>
+
+</mapper>
